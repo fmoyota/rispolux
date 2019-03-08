@@ -29,7 +29,8 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	</section>
 	
 	<section id="1">
-		<div class="clearfix icon-control"><div class="pull-right"><i class="fa circle fa-chevron-left" data-link="home"></i>&nbsp;&nbsp;&nbsp;<i  class="fa circle fa-chevron-right" data-link="2"></i>&nbsp;&nbsp;&nbsp;<i  class="fa circle fa-sign-out" data-link="home"></i></div>
+		<div class="clearfix icon-control"><div class="pull-right"><i class="fa circle fa-chevron-left" data-link="home"></i>&nbsp;&nbsp;&nbsp;<i  class="fa circle fa-chevron-right" data-link="2"></i>&nbsp;&nbsp;&nbsp;
+            <i  class="fa circle fa-reorder" data-link="home"></i>&nbsp;&nbsp;&nbsp;<i  class="fa circle fa-sign-out" data-link="home"></i></div>
 		</div>
 		
 		<img src="images/02-Rispolux.jpg" alt="Rispolux">
@@ -149,8 +150,22 @@ width=device-width, height=device-height, target-densitydpi=device-dpi" />
 			$('#home').fadeIn('slow');
 		});
 		
-	});
+		$('.fa-sign-out').click(function() {
+			exitFromApp();
+		});
+        
 		
+	});
+		function onLoad()
+            {
+                  document.addEventListener("deviceready", onDeviceReady, true);
+            }
+
+            function exitFromApp()
+             {
+                navigator.app.exitApp();
+             }
+
 	</script>
 </body>
 </html>
